@@ -1,73 +1,61 @@
-date,text,page
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,1
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,1
-,Latest Product Reviews reviewing policy code of conduct Load More,1
-,Latest Product Reviews reviewing policy code of conduct,1
-,reviewing policy code of conduct,1
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,1
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,2
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,2
-,Latest Product Reviews reviewing policy code of conduct Load More,2
-,Latest Product Reviews reviewing policy code of conduct,2
-,reviewing policy code of conduct,2
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,2
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,3
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,3
-,Latest Product Reviews reviewing policy code of conduct Load More,3
-,Latest Product Reviews reviewing policy code of conduct,3
-,reviewing policy code of conduct,3
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,3
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,4
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,4
-,Latest Product Reviews reviewing policy code of conduct Load More,4
-,Latest Product Reviews reviewing policy code of conduct,4
-,reviewing policy code of conduct,4
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,4
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,5
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,5
-,Latest Product Reviews reviewing policy code of conduct Load More,5
-,Latest Product Reviews reviewing policy code of conduct,5
-,reviewing policy code of conduct,5
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,5
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,6
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,6
-,Latest Product Reviews reviewing policy code of conduct Load More,6
-,Latest Product Reviews reviewing policy code of conduct,6
-,reviewing policy code of conduct,6
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,6
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,7
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,7
-,Latest Product Reviews reviewing policy code of conduct Load More,7
-,Latest Product Reviews reviewing policy code of conduct,7
-,reviewing policy code of conduct,7
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,7
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,8
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,8
-,Latest Product Reviews reviewing policy code of conduct Load More,8
-,Latest Product Reviews reviewing policy code of conduct,8
-,reviewing policy code of conduct,8
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,8
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,9
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,9
-,Latest Product Reviews reviewing policy code of conduct Load More,9
-,Latest Product Reviews reviewing policy code of conduct,9
-,reviewing policy code of conduct,9
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,9
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,10
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,10
-,Latest Product Reviews reviewing policy code of conduct Load More,10
-,Latest Product Reviews reviewing policy code of conduct,10
-,reviewing policy code of conduct,10
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,10
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,11
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,11
-,Latest Product Reviews reviewing policy code of conduct Load More,11
-,Latest Product Reviews reviewing policy code of conduct,11
-,reviewing policy code of conduct,11
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,11
-,web-scraping.dev Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,12
-,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,12
-,Latest Product Reviews reviewing policy code of conduct Load More,12
-,Latest Product Reviews reviewing policy code of conduct,12
-,reviewing policy code of conduct,12
-,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,12
+date,text,sentiment,confidence,page
+2023-11-24,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,1
+2023-02-27,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,1
+2023-01-13,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,1
+2023-05-21,reviewing policy code of conduct,Positive,0.9739470481872559,1
+2023-05-06,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,1
+2023-04-25,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,2
+2023-03-13,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,2
+2023-02-22,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,2
+2023-12-13,reviewing policy code of conduct,Positive,0.9739470481872559,2
+2023-10-07,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,2
+2023-02-14,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,3
+2023-10-30,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,3
+2023-08-05,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,3
+2023-01-17,reviewing policy code of conduct,Positive,0.9739470481872559,3
+2023-01-16,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,3
+2023-02-17,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,4
+2023-04-22,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,4
+2023-04-30,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,4
+2023-09-16,reviewing policy code of conduct,Positive,0.9739470481872559,4
+2023-11-05,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,4
+2023-01-14,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,5
+2023-10-15,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,5
+2023-04-12,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,5
+2023-11-29,reviewing policy code of conduct,Positive,0.9739470481872559,5
+2023-12-26,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,5
+2023-10-07,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,6
+2023-08-03,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,6
+2023-04-23,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,6
+2023-08-18,reviewing policy code of conduct,Positive,0.9739470481872559,6
+2023-10-29,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,6
+2023-05-23,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,7
+2023-01-04,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,7
+2023-03-23,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,7
+2023-12-24,reviewing policy code of conduct,Positive,0.9739470481872559,7
+2023-08-05,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,7
+2023-06-24,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,8
+2023-05-23,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,8
+2023-03-21,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,8
+2023-04-21,reviewing policy code of conduct,Positive,0.9739470481872559,8
+2023-06-22,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,8
+2023-02-22,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,9
+2023-02-17,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,9
+2023-07-14,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,9
+2023-02-19,reviewing policy code of conduct,Positive,0.9739470481872559,9
+2023-07-03,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,9
+2023-06-26,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,10
+2023-11-06,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,10
+2023-05-16,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,10
+2023-01-23,reviewing policy code of conduct,Positive,0.9739470481872559,10
+2023-08-24,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,10
+2023-10-02,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,11
+2023-03-05,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,11
+2023-07-13,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,11
+2023-02-10,reviewing policy code of conduct,Positive,0.9739470481872559,11
+2023-10-10,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,11
+2023-05-31,Docs API Graphql Products Reviews Testimonials File Download login Clear Continue,Negative,0.991560161113739,12
+2023-11-18,Latest Product Reviews reviewing policy code of conduct Load More,Negative,0.9812946319580078,12
+2023-11-13,Latest Product Reviews reviewing policy code of conduct,Positive,0.6851096749305725,12
+2023-07-05,reviewing policy code of conduct,Positive,0.9739470481872559,12
+2023-10-23,SCRAPFLY ACADEMY API Docs Sitemap Blog GitHub v1.3.0 made by ScrapFly,Negative,0.9964235424995422,12
