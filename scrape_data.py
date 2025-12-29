@@ -1,3 +1,6 @@
+# scrape_data.py
+from __future__ import annotations
+
 import csv
 import time
 from pathlib import Path
@@ -5,46 +8,40 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://web-scraping.dev"
-DATA_DIR = Path("data")
+
+DATA_DIR = Path(__file__).parent / "data"
 DATA_DIR.mkdir(exist_ok=True)
 
 UA = {
-    "User-Agent": "Mozilla/5.0 (HW3 Scraper)",
-    "Accept-Language": "en-US,en;q=0.9",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/120 Safari/537.36"
 }
 
 
 def save_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    """Write CSV (creates file even if rows is empty)."""
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
-        if rows:
-            w.writerows(rows)
+        for r in rows:
+            w.writerow({k: r.get(k, "") for k in fieldnames})
 
 
-# -------------------------
-# PRODUCTS: HTML pages /products?page=...
-# -------------------------
 def scrape_products(max_pages: int = 5) -> None:
     rows = []
-
     for page in range(1, max_pages + 1):
         url = f"{BASE}/products?page={page}"
         r = requests.get(url, headers=UA, timeout=30)
-        if r.status_code != 200 or not r.text.strip():
+        if r.status_code != 200:
             break
 
         soup = BeautifulSoup(r.text, "lxml")
-
-        titles = soup.select("h3")
+        # product titles are typically in h3 or a card-title; keep it robust
+        titles = [t.get_text(strip=True) for t in soup.select("h3") if t.get_text(strip=True)]
         if not titles:
             break
 
-        for h in titles:
-            title = h.get_text(strip=True)
-            if title:
-                rows.append({"title": title, "page": page})
+        for t in titles:
+            rows.append({"title": t, "page": page})
 
         time.sleep(0.2)
 
@@ -53,29 +50,22 @@ def scrape_products(max_pages: int = 5) -> None:
     print("Saved:", out, "rows:", len(rows))
 
 
-# -------------------------
-# TESTIMONIALS: HTML fragment API /api/testimonials?page=...
-# -------------------------
 def scrape_testimonials(max_pages: int = 5) -> None:
-    headers = {**UA, "Referer": f"{BASE}/testimonials"}
     rows = []
-
     for page in range(1, max_pages + 1):
         url = f"{BASE}/api/testimonials?page={page}"
-        r = requests.get(url, headers=headers, timeout=30)
+        r = requests.get(url, headers={**UA, "Referer": f"{BASE}/testimonials"}, timeout=30)
         if r.status_code != 200 or not r.text.strip():
             break
 
         soup = BeautifulSoup(r.text, "lxml")
-
-        cards = soup.select(".testimonial")
-        if not cards:
+        blocks = soup.select(".testimonial")
+        if not blocks:
             break
 
-        for c in cards:
-            inner = c.select_one("div")
-            text = inner.get_text(" ", strip=True) if inner else c.get_text(" ", strip=True)
-            if text and len(text) >= 10:
+        for b in blocks:
+            text = b.get_text(" ", strip=True)
+            if text:
                 rows.append({"text": text, "page": page})
 
         time.sleep(0.2)
@@ -85,51 +75,46 @@ def scrape_testimonials(max_pages: int = 5) -> None:
     print("Saved:", out, "rows:", len(rows))
 
 
-# -------------------------
-# REVIEWS: HTML pages /reviews?page=...
-# (no API, no product_id, no Playwright)
-# -------------------------
-def scrape_reviews_pages(max_pages: int = 12) -> None:
+def scrape_reviews(max_pages: int = 12) -> None:
+    """
+    Reviews endpoint in this sandbox can be a bit inconsistent.
+    This version scrapes /reviews?page=X (HTML) and extracts review text.
+    Dates are not reliably provided -> we leave date blank (app will generate placeholder dates).
+    """
     rows = []
-
     for page in range(1, max_pages + 1):
         url = f"{BASE}/reviews?page={page}"
         r = requests.get(url, headers=UA, timeout=30)
-        if r.status_code != 200 or not r.text.strip():
+        if r.status_code != 200:
             break
 
         soup = BeautifulSoup(r.text, "lxml")
 
-        # Most robust approach: gather chunks that contain a <time> tag (reviews usually have dates)
-        time_tags = soup.select("time")
-        if not time_tags:
-            # fallback selector
-            blocks = soup.select(".review, article, li, .card, div")
-        else:
-            # take parents of <time> as candidate blocks
-            blocks = []
-            for t in time_tags:
-                parent = t.parent
-                if parent:
-                    blocks.append(parent)
+        # Try common patterns
+        # 1) cards
+        candidates = soup.select(".card, .review, .review-card, article")
+        texts = []
 
-        added = 0
-        for b in blocks:
-            text = b.get_text(" ", strip=True)
-            if not text or len(text) < 30:
-                continue
+        if candidates:
+            for c in candidates:
+                txt = c.get_text(" ", strip=True)
+                if txt and len(txt) > 10:
+                    texts.append(txt)
 
-            t = b.select_one("time")
-            date_str = ""
-            if t:
-                date_str = t.get("datetime") if t.has_attr("datetime") else t.get_text(strip=True)
+        # 2) fallback: list items / paragraphs
+        if not texts:
+            for p in soup.select("p"):
+                txt = p.get_text(" ", strip=True)
+                if txt and len(txt) > 20:
+                    texts.append(txt)
 
-            rows.append({"date": date_str, "text": text, "page": page})
-            added += 1
-
-        # if nothing added on this page, likely selector mismatch or end of pages
-        if added == 0:
+        # Stop if nothing found (likely last page)
+        if not texts:
             break
+
+        # Keep it reasonable (avoid grabbing nav/footer huge text)
+        for t in texts[:25]:
+            rows.append({"date": "", "text": t, "page": page})
 
         time.sleep(0.2)
 
@@ -141,4 +126,4 @@ def scrape_reviews_pages(max_pages: int = 12) -> None:
 if __name__ == "__main__":
     scrape_products(max_pages=5)
     scrape_testimonials(max_pages=5)
-    scrape_reviews_pages(max_pages=12)
+    scrape_reviews(max_pages=12)
